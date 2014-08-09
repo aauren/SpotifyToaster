@@ -23,7 +23,14 @@ A Windows based operating system. I've currently only tested it with Windows 7, 
 ## Installation
 Currently, the application is only a simple .exe file so you need only copy it to your computer and double-click it to get it going.
 
-You don't need to have Spotify running in order to start the application. The next time you start Spotify and begin playing music, the application will begin notifying you of the songs being played.
+The compiled application lives in the bin folder, to make it easier though, you can:
+
+**[Download The Application Here](https://github.com/aauren/SpotifyToaster/blob/master/bin/Release/SpotifyToaster.exe)**
+
+You don't need to have Spotify running in order to start the application. If everything went well, you should see something similar to [this](https://github.com/aauren/SpotifyToaster/blob/master/images/toastStartupNotificationExample.png). The next time you start Spotify and begin playing music, the application will begin notifying you of the songs being played.
+
+## Known Issues
+If you have any questions about how this application works, or any problems please check the [issues](https://github.com/aauren/SpotifyToaster/issues) section first to see if your problem is already mentioned there.
 
 ## Contribution
 I welcome any help people are willing to give just submit a pull request. In the future, I'll put more information here on how to build this application, but for right now if you have Visual Studio you should be fine.
