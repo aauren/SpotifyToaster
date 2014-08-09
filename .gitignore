@@ -1,0 +1,4 @@
+bin/Debug/
+obj/
+*.suo
+*.user
