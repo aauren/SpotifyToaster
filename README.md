@@ -9,10 +9,10 @@ I'm an avid Spotify user, but I've always felt that it was missing a way to iden
 So with this project I've attempted to recreate those notifications for Windows Spotify users. If you're like me and you miss those popups as well, feel free to use this application.
 
 ## Credits
-##### [Ranveer Raghuwanshi](https://github.com/ranveer5289) - http://stackoverflow.com/users/776084/ranrag
-When I first started this project, the first thing I did was look around to see if anything like this already existed. In fact, Ranveer had already done a great job of producing this same functionality for Growl, Snarl, and Notifu in his application [spotifynotifier](https://code.google.com/p/spotifynotifier/). The only problem is that I had no other need for these notification frameworks and felt that they were a bit heavy for my use case.
+##### Ranveer Raghuwanshi ([GitHub](https://github.com/ranveer5289) [StackOverflow](http://stackoverflow.com/users/776084/ranrag)) and Matthew Javellana ([Gmail](mmjavellana@gmail.com))
+When I first started this project, the first thing I did was look around to see if anything like this already existed. In fact, Ranveer and Matthew had already done a great job of producing this same functionality for Growl, Snarl, and Notifu in his application [spotifynotifier](https://code.google.com/p/spotifynotifier/). The only problem is that I had no other need for these notification frameworks and felt that they were a bit heavy for my use case.
 
-So, as the application is now, most of the work of getting the current track, artist, and eventually album art is derrivitive from Ranveer's original application. My original work mostly comes in with some refactoring that I did and the actual mechanism that displays the toast notification. Thanks Ranveer!
+So, as the application is now, most of the work of getting the current track, artist, and eventually album art is derrivitive from their original application. My original work mostly comes in with some refactoring that I did and the actual mechanism that displays the toast notification. Thanks Ranveer and Matthew!
 
 ##### aku - http://stackoverflow.com/users/1196/aku
 My first ideas of how to animate a toast notification came from [aku's post on StackExchange](http://stackoverflow.com/questions/461184/toast-style-popup-for-my-application)
