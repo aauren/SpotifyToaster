@@ -51,10 +51,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlbumArt.cs" />
-    <Compile Include="MainSpotify.cs" />
-    <Compile Include="Notify.cs" />
-    <Compile Include="ProcessInformation.cs" />
+    <Compile Include="Sources\AlbumArt.cs" />
+    <Compile Include="Sources\MainSpotify.cs" />
+    <Compile Include="Sources\Notify.cs" />
+    <Compile Include="Sources\ProcessInformation.cs" />
     <Compile Include="Properties\ProtectedResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -65,19 +65,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PublicResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ToastForm.cs">
+    <Compile Include="Sources\ToastForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ToastForm.Designer.cs">
+    <Compile Include="Sources\ToastForm.Designer.cs">
       <DependentUpon>ToastForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToastOverlay.cs">
+    <Compile Include="Sources\ToastOverlay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ToastOverlay.Designer.cs">
+    <Compile Include="Sources\ToastOverlay.Designer.cs">
       <DependentUpon>ToastOverlay.cs</DependentUpon>
     </Compile>
-    <Compile Include="TrackMetadata.cs" />
+    <Compile Include="Sources\TrackMetadata.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\ProtectedResources.resx">
@@ -88,10 +88,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>PublicResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ToastForm.resx">
+    <EmbeddedResource Include="Sources\ToastForm.resx">
       <DependentUpon>ToastForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ToastOverlay.resx">
+    <EmbeddedResource Include="Sources\ToastOverlay.resx">
       <DependentUpon>ToastOverlay.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

@@ -4,3 +4,4 @@ obj/
 *.user
 Properties/ProtectedResources.Designer.cs
 Properties/ProtectedResources.resx
+*.pdb
