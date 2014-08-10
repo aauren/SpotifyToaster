@@ -93,8 +93,8 @@
             this.Text = "ToastForm";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.White;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ToastForm_FormClosed);
-            this.VisibleChanged += new System.EventHandler(this.ToastForm_VisibleChanged);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnExit);
+            this.VisibleChanged += new System.EventHandler(this.toastVisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

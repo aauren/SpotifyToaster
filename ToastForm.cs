@@ -20,10 +20,14 @@ namespace spotifytoaster
         private int startPosX;
         private int startPosY;
         private NameChangeTracker nct;
+        private NotifyIcon trayIcon;
 
         public ToastForm()
         {
             InitializeComponent();
+
+            // Create tray icon
+            createTrayIconAndMenu();
 
             // Create and run timer for animation
             timer = new Timer();
@@ -34,7 +38,7 @@ namespace spotifytoaster
             nct = new NameChangeTracker(this);
         }
 
-        private void ToastForm_VisibleChanged(object sender, EventArgs e)
+        private void toastVisibleChanged(object sender, EventArgs e)
         {
             if (this.Visible == true)
             {
@@ -48,6 +52,14 @@ namespace spotifytoaster
                 timer.Enabled = true;
                 timer.Start();
             }
+        }
+
+        private void OnExit(object sender, EventArgs e)
+        {
+            Console.WriteLine("Form Close Detected");
+            nct.removeWindowHooks();
+            trayIcon.Visible = false;
+            Application.Exit();
         }
 
         void timerTick(object sender, EventArgs e)
@@ -68,10 +80,22 @@ namespace spotifytoaster
             }
         }
 
-        private void ToastForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void createTrayIconAndMenu()
         {
-            Console.WriteLine("Form Close Detected");
-            nct.removeWindowHooks();
+            // Create a simple tray menu with only one item.
+            ContextMenu trayMenu = new ContextMenu();
+            trayMenu.MenuItems.Add("Exit", OnExit);
+
+            // Create a tray icon. In this example we use a
+            // standard system icon for simplicity, but you
+            // can of course use your own custom icon too.
+            trayIcon = new NotifyIcon();
+            trayIcon.Text = "Spotify Toaster";
+            trayIcon.Icon = new Icon(Icon.ExtractAssociatedIcon("SpotifyToaster.exe"), 40, 40);
+
+            // Add menu to tray icon and show it.
+            trayIcon.ContextMenu = trayMenu;
+            trayIcon.Visible = true;
         }
 
         public void setArtist(String text)
