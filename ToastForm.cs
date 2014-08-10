@@ -28,7 +28,7 @@ namespace spotifytoaster
             // Create and run timer for animation
             timer = new Timer();
             timer.Interval = 25;
-            timer.Tick += new EventHandler(timer_Tick);
+            timer.Tick += new EventHandler(timerTick);
 
             // Now let's setup our Spotify Window tracker
             nct = new NameChangeTracker(this);
@@ -44,12 +44,13 @@ namespace spotifytoaster
                 SetDesktopLocation(startPosX, startPosY);
                 base.OnLoad(e);
                 // Begin animation
+                TopMost = true;
                 timer.Enabled = true;
                 timer.Start();
             }
         }
 
-        void timer_Tick(object sender, EventArgs e)
+        void timerTick(object sender, EventArgs e)
         {
             //Lift window by 5 pixels
             startPosY -= 2;
