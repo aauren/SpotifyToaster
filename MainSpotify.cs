@@ -52,7 +52,7 @@ class NameChangeTracker
         psi = new ProcessInformation();
         tmd = new TrackMetadata();
         notify = new Notify();
-        Console.WriteLine(psi.getSpotifyPID());
+        //Console.WriteLine(psi.getSpotifyPID());
 
         // Listen for name change changes for spotify(check pid!=0).
         hWinEventHook = SetWinEventHook(0x0800c, 0x800c, IntPtr.Zero, procDelegate, Convert.ToUInt32(psi.getSpotifyPID()), 0, 0);
@@ -62,7 +62,7 @@ class NameChangeTracker
 
     public void removeWindowHooks()
     {
-        Console.WriteLine("Removing Window Hooks");
+        //Console.WriteLine("Removing Window Hooks");
         UnhookWinEvent(hWinEventHook);
         UnhookWinEvent(hWinEventHook_start);
     }
@@ -79,9 +79,9 @@ class NameChangeTracker
 
                 if (track != null || artist != null)
                 {
-                    Console.WriteLine(artist + " - " + track);
+                    //Console.WriteLine(artist + " - " + track);
                     notify.showViaToast(myForm, track, artist);
-                    Console.WriteLine("Finished Showing");
+                    //Console.WriteLine("Finished Showing");
                 }
             }
         }
@@ -95,10 +95,10 @@ class NameChangeTracker
             //across all process(hwnd).
             if (psi.isSpotifyAvailable() && hwnd.ToInt32() == psi.getSpotifyWindowHandle().ToInt32())
             {
-                Console.WriteLine("checking hwnd");
+                //Console.WriteLine("checking hwnd");
                 if (eventType == EVENT_OBJECT_CREATE)
                 {
-                    Console.WriteLine("create event");
+                    //Console.WriteLine("create event");
                     IntPtr hWinEventHook = SetWinEventHook(0x0800c, 0x800c, IntPtr.Zero, procDelegate, Convert.ToUInt32(psi.getSpotifyPID()), 0, 0);
                 }
             }

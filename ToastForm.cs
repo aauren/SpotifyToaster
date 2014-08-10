@@ -62,7 +62,7 @@ namespace spotifytoaster
 
         private void OnExit(object sender, EventArgs e)
         {
-            Console.WriteLine("Form Close Detected");
+            //Console.WriteLine("Form Close Detected");
             nct.removeWindowHooks();
             trayIcon.Visible = false;
             Application.Exit();
