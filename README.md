@@ -29,7 +29,7 @@ The compiled application lives in the bin folder, to make it easier though, you 
 
 **[Download The Application Here](https://github.com/aauren/SpotifyToaster/blob/master/bin/Release/SpotifyToaster.exe)**
 
-You don't need to have Spotify running in order to start the application. If everything went well, you should see something similar to [this](https://github.com/aauren/SpotifyToaster/blob/master/images/toastStartupNotificationExample.png) after double-clicking the exe. The next time you start Spotify and begin playing music, the application will begin notifying you of the songs being played.
+You don't need to have Spotify running in order to start the application. If everything went well, you should see something similar to [this](https://github.com/aauren/SpotifyToaster/blob/master/images/toastStartupNotificationExample.png) after double-clicking the exe. The next time you start Spotify and begin playing music, the application will begin notifying you of the songs being played. When you want to close the application just find the toast icon in your system tray (area near your clock), right-click it, and then click "Exit".
 
 ## Known Issues
 If you have any questions about how this application works, or any problems please check the [issues](https://github.com/aauren/SpotifyToaster/issues) section first to see if your problem is already mentioned there. If not, feel free to add an issue that describes the problem you're experiencing.
