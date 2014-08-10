@@ -28,63 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.titleBox = new System.Windows.Forms.TextBox();
-            this.artistBox = new System.Windows.Forms.TextBox();
-            this.trackBox = new System.Windows.Forms.TextBox();
+            this.albumArt = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.albumArt)).BeginInit();
             this.SuspendLayout();
             // 
-            // titleBox
+            // albumArt
             // 
-            this.titleBox.BackColor = System.Drawing.Color.Black;
-            this.titleBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.titleBox.Enabled = false;
-            this.titleBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleBox.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.titleBox.Location = new System.Drawing.Point(13, 13);
-            this.titleBox.Name = "titleBox";
-            this.titleBox.ReadOnly = true;
-            this.titleBox.Size = new System.Drawing.Size(338, 16);
-            this.titleBox.TabIndex = 0;
-            this.titleBox.Text = "Spotify Song Changed";
-            this.titleBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.albumArt.Location = new System.Drawing.Point(10, 10);
+            this.albumArt.Name = "albumArt";
+            this.albumArt.Size = new System.Drawing.Size(64, 64);
+            this.albumArt.TabIndex = 3;
+            this.albumArt.TabStop = false;
             // 
-            // artistBox
+            // label1
             // 
-            this.artistBox.BackColor = System.Drawing.SystemColors.WindowText;
-            this.artistBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.artistBox.Enabled = false;
-            this.artistBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.artistBox.ForeColor = System.Drawing.Color.White;
-            this.artistBox.Location = new System.Drawing.Point(113, 48);
-            this.artistBox.Name = "artistBox";
-            this.artistBox.ReadOnly = true;
-            this.artistBox.Size = new System.Drawing.Size(238, 15);
-            this.artistBox.TabIndex = 1;
-            this.artistBox.Text = "Artist";
-            // 
-            // trackBox
-            // 
-            this.trackBox.BackColor = System.Drawing.SystemColors.WindowText;
-            this.trackBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.trackBox.Enabled = false;
-            this.trackBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trackBox.ForeColor = System.Drawing.Color.White;
-            this.trackBox.Location = new System.Drawing.Point(113, 77);
-            this.trackBox.Name = "trackBox";
-            this.trackBox.ReadOnly = true;
-            this.trackBox.Size = new System.Drawing.Size(238, 15);
-            this.trackBox.TabIndex = 2;
-            this.trackBox.Text = "Track Name";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.YellowGreen;
+            this.label1.Location = new System.Drawing.Point(83, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Spotify Song Changed";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ToastForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowText;
-            this.ClientSize = new System.Drawing.Size(363, 109);
-            this.Controls.Add(this.trackBox);
-            this.Controls.Add(this.artistBox);
-            this.Controls.Add(this.titleBox);
+            this.ClientSize = new System.Drawing.Size(363, 84);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.albumArt);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ToastForm";
@@ -95,6 +71,7 @@
             this.TransparencyKey = System.Drawing.Color.White;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnExit);
             this.VisibleChanged += new System.EventHandler(this.toastVisibleChanged);
+            ((System.ComponentModel.ISupportInitialize)(this.albumArt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,8 +79,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox titleBox;
-        private System.Windows.Forms.TextBox artistBox;
-        private System.Windows.Forms.TextBox trackBox;
+        private System.Windows.Forms.PictureBox albumArt;
+        private System.Windows.Forms.Label label1;
     }
 }

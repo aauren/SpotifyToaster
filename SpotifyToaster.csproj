@@ -36,8 +36,12 @@
   <PropertyGroup>
     <ApplicationIcon>toast.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>NameChangeTracker</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,23 +51,52 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlbumArt.cs" />
     <Compile Include="MainSpotify.cs" />
     <Compile Include="Notify.cs" />
     <Compile Include="ProcessInformation.cs" />
+    <Compile Include="Properties\ProtectedResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProtectedResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\PublicResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PublicResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ToastForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ToastForm.Designer.cs">
       <DependentUpon>ToastForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToastOverlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToastOverlay.Designer.cs">
+      <DependentUpon>ToastOverlay.cs</DependentUpon>
+    </Compile>
     <Compile Include="TrackMetadata.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\ProtectedResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProtectedResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\PublicResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PublicResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ToastForm.resx">
       <DependentUpon>ToastForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ToastOverlay.resx">
+      <DependentUpon>ToastOverlay.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\cdrom_unmount.png" />
     <Content Include="toast.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />

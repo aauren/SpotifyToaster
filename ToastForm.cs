@@ -21,10 +21,14 @@ namespace spotifytoaster
         private int startPosY;
         private NameChangeTracker nct;
         private NotifyIcon trayIcon;
+        private ToastOverlay overlay;
 
         public ToastForm()
         {
             InitializeComponent();
+
+            // Create overlay so that our text isn't transparent and difficult to read
+            initializeOverlay();
 
             // Create tray icon
             createTrayIconAndMenu();
@@ -47,8 +51,10 @@ namespace spotifytoaster
                 startPosY = Screen.PrimaryScreen.WorkingArea.Height;
                 SetDesktopLocation(startPosX, startPosY);
                 base.OnLoad(e);
-                // Begin animation
+                // Setup overlay also
                 TopMost = true;
+                overlay.TopMost = true;
+                // Begin animation
                 timer.Enabled = true;
                 timer.Start();
             }
@@ -72,6 +78,7 @@ namespace spotifytoaster
                 timer.Stop();
                 timer.Enabled = false;
                 System.Threading.Thread.Sleep(5000);
+                overlay.Hide();
                 Hide();
             }
             else
@@ -98,14 +105,31 @@ namespace spotifytoaster
             trayIcon.Visible = true;
         }
 
+        private void initializeOverlay()
+        {
+            overlay = new ToastOverlay();
+            this.LocationChanged += delegate { overlay.Location = this.Location; };
+            this.Load += delegate { overlay.Visible = false;  overlay.Show(this); };
+        }
+
         public void setArtist(String text)
         {
-            artistBox.Text = text;
+            overlay.artistBox.Text = text;
         }
 
         public void setTrack(String text)
         {
-            trackBox.Text = text;
+            overlay.trackBox.Text = text;
+        }
+
+        public void setAlbumImage(String url)
+        {
+            if (null == url)
+            {
+                albumArt.Image = spotifytoaster.Properties.PublicResources.album_missing;
+                return;
+            }
+            albumArt.Load(url);
         }
     }
 }

@@ -19,6 +19,8 @@ namespace Notification
 {
     class Notify
     {
+        private AlbumArt albumArt = new AlbumArt();
+
         private String getNotificationText(String track, String artist)
         {
             //string command = string.Format("/t:\"Song: {0}\" /i:\"C:\\spotify.jpg\" /n:\"Spotify\" /a:\"Spotify\" \"Artist: {1}\"",track,artist);
@@ -29,6 +31,7 @@ namespace Notification
         {
             myForm.setArtist(artist);
             myForm.setTrack(track);
+            myForm.setAlbumImage(albumArt.getImageUrl(artist, track));
             myForm.Show();
         }
 

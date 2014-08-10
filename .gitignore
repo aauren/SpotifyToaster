@@ -2,3 +2,5 @@ bin/Debug/
 obj/
 *.suo
 *.user
+Properties/ProtectedResources.Designer.cs
+Properties/ProtectedResources.resx
