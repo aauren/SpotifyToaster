@@ -38,6 +38,7 @@ If you have any questions about how this application works, or any problems plea
 I welcome any help people are willing to give just submit a pull request. In the future, I'll put more information here on how to build this application, but for right now if you're familiar with Visual Studio you should be fine.
 
 One thing that you will need to do (if you want to see album artwork in your builds) will be to go to [LastFM's API Page](http://www.last.fm/api) and get your API keys. Once you have those, you need to create a resource within Visual Studio by doing the following:
+
 1. Right-Click project name (SpotifyToaster) > Add > New Item...
 2. Search or browse for an item named "Resources File"
 3. Change it's name in the box at the bottom of the screen to: "ProtectedResources.resx"
