@@ -60,10 +60,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProtectedResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\PublicResources.Designer.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PublicResources.resx</DependentUpon>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Sources\ToastForm.cs">
       <SubType>Form</SubType>
@@ -84,9 +84,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ProtectedResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\PublicResources.resx">
+    <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>PublicResources.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Sources\ToastForm.resx">
       <DependentUpon>ToastForm.cs</DependentUpon>

@@ -19,7 +19,7 @@ namespace Notification
 {
     class Notify
     {
-        private AlbumArt albumArt = new AlbumArt();
+        private AlbumInfo albumInfo = new AlbumInfo();
 
         private String getNotificationText(String track, String artist)
         {
@@ -31,7 +31,31 @@ namespace Notification
         {
             myForm.setArtist(artist);
             myForm.setTrack(track);
-            myForm.setAlbumImage(albumArt.getImageUrl(artist, track));
+            myForm.setAlbum("");
+            myForm.setAlbumImage(spotifytoaster.Properties.Resources.album_missing);
+
+            // Attempt to load additional information about the track
+            if (albumInfo.loadAlbumInfo(artist, track))
+            {
+                // Set Album Title if we have one
+                if (null != albumInfo.getAlbumTitle())
+                {
+                    myForm.setAlbum(albumInfo.getAlbumTitle());
+                }
+
+                // Set Album Image URL if we have one
+                if (null != albumInfo.getAlbumImageURL())
+                {
+                    myForm.setAlbumImageUrl(albumInfo.getAlbumImageURL());
+                }
+
+                // Add Track Number to the title if we have one
+                if (null != albumInfo.getTrackNumber())
+                {
+                    myForm.setTrack(albumInfo.getTrackNumber() + ". " + track);
+                }
+            }
+
             myForm.Show();
         }
 

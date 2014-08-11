@@ -122,14 +122,19 @@ namespace spotifytoaster
             overlay.trackBox.Text = text;
         }
 
-        public void setAlbumImage(String url)
+        public void setAlbum(String text)
         {
-            if (null == url)
-            {
-                albumArt.Image = spotifytoaster.Properties.PublicResources.album_missing;
-                return;
-            }
+            overlay.albumBox.Text = text;
+        }
+
+        public void setAlbumImageUrl(String url)
+        {
             albumArt.Load(url);
+        }
+
+        public void setAlbumImage(Bitmap image)
+        {
+            albumArt.Image = image;
         }
     }
 }
