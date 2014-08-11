@@ -29,7 +29,8 @@ namespace spotifytoaster
         {
             try
             {
-                String url = String.Format(lastFmUrlTemplate, getLastFMAPIKey(), artist, track);
+                String url = String.Format(lastFmUrlTemplate, getLastFMAPIKey(), 
+                    Uri.EscapeDataString(artist), Uri.EscapeDataString(track));
                 //Console.WriteLine("Fetching from URL: " + url);
                 XPathDocument doc = new XPathDocument(url);
 
