@@ -59,6 +59,7 @@
             this.TransparencyKey = System.Drawing.Color.White;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnExit);
             this.VisibleChanged += new System.EventHandler(this.toastVisibleChanged);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.onPaint);
             ((System.ComponentModel.ISupportInitialize)(this.albumArt)).EndInit();
             this.ResumeLayout(false);
 
