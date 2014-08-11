@@ -18,7 +18,7 @@ So, as the application is now, most of the work of getting the current track, ar
 My first ideas of how to animate a toast notification came from [aku's post on StackExchange](http://stackoverflow.com/questions/461184/toast-style-popup-for-my-application)
 
 ## Pre-requisites
-A Windows based operating system. I've only tested it with Windows 7, but it should run on other versions of Windows as well. I would be grateful for any testing others are willing to do.
+A Windows based operating system. I've only tested it with Windows 7, but it **should run on any system that is installed with .NET 4.0 or higher**. I would be grateful for any testing others are willing to do.
 
 **Disclaimer** - This project, to my knowledge, has only been tested on my own system so far. If you do end up testing it, please let me know how it works for you so that I can remove this section. = )
 
