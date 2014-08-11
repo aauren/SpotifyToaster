@@ -38,6 +38,7 @@
             this.albumArt.Location = new System.Drawing.Point(10, 10);
             this.albumArt.Name = "albumArt";
             this.albumArt.Size = new System.Drawing.Size(64, 64);
+            this.albumArt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.albumArt.TabIndex = 3;
             this.albumArt.TabStop = false;
             // 
