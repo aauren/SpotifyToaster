@@ -3,6 +3,8 @@ SpotifyToaster
 
 Presents toast notifications (system tray popups) when Spotify changes songs.
 
+![toast notification example](https://raw.githubusercontent.com/aauren/SpotifyToaster/master/images/toastNotificationExample.png)
+
 ## Background
 I'm an avid Spotify user, but I've always felt that it was missing a way to identify the songs as they changed. Other applications like Windows Media Player or Winamp had the option of displaying toast notifications which I always referred to as "System Tray Popups." These popups would be displayed when a new song started and would appear near the clock on the Windows Menu Bar to give you the name of the artist, album, track number, and track title along with the album art.
 
