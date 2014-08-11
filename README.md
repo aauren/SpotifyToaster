@@ -20,7 +20,7 @@ My first ideas of how to animate a toast notification came from [aku's post on S
 ## Pre-requisites
 A Windows based operating system. I've only tested it with Windows 7, but it should run on other versions of Windows as well. I would be grateful for any testing others are willing to do.
 
-**Disclaimer** - This project is currently really raw. Think alpha stages. While it does the bare bones of what it is supposed to do, there are still a lot of things missing to make the operation smooth. If you use this, please do so with a healthy sense of adventure!
+**Disclaimer** - This project, to my knowledge, has only been tested on my own system so far. If you do end up testing it, please let me know how it works for you so that I can remove this section. = )
 
 ## Installation
 Currently, the application is only a simple .exe file so you need only copy it to your computer and double-click it to get it going.
