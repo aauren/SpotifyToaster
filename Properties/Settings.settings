@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="spotifytoaster.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ToastMovementSpeed" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="ToastTimeToLive" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5000</Value>
+    </Setting>
+    <Setting Name="ToastBackgroundColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">WindowText</Value>
+    </Setting>
+    <Setting Name="ToastAlphaLevel" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.9</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

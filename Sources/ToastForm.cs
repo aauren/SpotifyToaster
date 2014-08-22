@@ -42,6 +42,9 @@ namespace spotifytoaster
             // Create rounded corners
             this.Region = System.Drawing.Region.FromHrgn(createRoundRectRgn(0, 0, Width, Height, 20, 20));
 
+            // Initialize our form's appearance from user settings
+            initializeFromSettings();
+
             // Create overlay so that our text isn't transparent and difficult to read
             initializeOverlay();
 
@@ -50,11 +53,17 @@ namespace spotifytoaster
 
             // Create and run timer for animation
             timer = new Timer();
-            timer.Interval = 25;
+            timer.Interval = (int) Properties.Settings.Default["ToastMovementSpeed"];
             timer.Tick += new EventHandler(timerTick);
 
             // Now let's setup our Spotify Window tracker
             nct = new NameChangeTracker(this);
+        }
+
+        private void initializeFromSettings()
+        {
+            this.Opacity = (double)Properties.Settings.Default["ToastAlphaLevel"];
+            this.BackColor = (Color)Properties.Settings.Default["ToastBackgroundColor"];
         }
 
         private void initializeOverlay()
@@ -117,7 +126,7 @@ namespace spotifytoaster
             {
                 timer.Stop();
                 timer.Enabled = false;
-                System.Threading.Thread.Sleep(5000);
+                System.Threading.Thread.Sleep((int)Properties.Settings.Default["ToastTimeToLive"]);
                 overlay.Hide();
                 Hide();
             }

@@ -52,7 +52,6 @@
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ToastForm";
-            this.Opacity = 0.9D;
             this.ShowInTaskbar = false;
             this.Text = "ToastForm";
             this.TopMost = true;
