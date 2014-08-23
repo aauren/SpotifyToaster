@@ -56,7 +56,7 @@
             this.Text = "ToastForm";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.White;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnExit);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.onExit);
             this.VisibleChanged += new System.EventHandler(this.toastVisibleChanged);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.onPaint);
             ((System.ComponentModel.ISupportInitialize)(this.albumArt)).EndInit();

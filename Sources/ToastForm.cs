@@ -3,6 +3,7 @@
  * Date: 8/8/2014
  */
 
+using spotifytoaster.Sources;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,7 @@ namespace spotifytoaster
         private NameChangeTracker nct;
         private NotifyIcon trayIcon;
         private ToastOverlay overlay;
+        private Options myOptions;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr createRoundRectRgn
@@ -42,6 +44,9 @@ namespace spotifytoaster
             // Create rounded corners
             this.Region = System.Drawing.Region.FromHrgn(createRoundRectRgn(0, 0, Width, Height, 20, 20));
 
+            // Initialize user options and settings
+            myOptions = new Options();
+
             // Initialize our form's appearance from user settings
             initializeFromSettings();
 
@@ -53,7 +58,7 @@ namespace spotifytoaster
 
             // Create and run timer for animation
             timer = new Timer();
-            timer.Interval = (int) Properties.Settings.Default["ToastMovementSpeed"];
+            timer.Interval = myOptions.ToastMovementSpeed;
             timer.Tick += new EventHandler(timerTick);
 
             // Now let's setup our Spotify Window tracker
@@ -62,13 +67,14 @@ namespace spotifytoaster
 
         private void initializeFromSettings()
         {
-            this.Opacity = (double)Properties.Settings.Default["ToastAlphaLevel"];
-            this.BackColor = (Color)Properties.Settings.Default["ToastBackgroundColor"];
+            this.Opacity = myOptions.ToastAlphaLevel;
+            this.BackColor = myOptions.ToastBackgroundColor;
         }
 
         private void initializeOverlay()
         {
             overlay = new ToastOverlay();
+            overlay.initializeFormSettings(myOptions);
             this.LocationChanged += delegate { overlay.Location = this.Location; };
             this.Load += delegate { overlay.Visible = false; overlay.Show(this); };
         }
@@ -77,7 +83,8 @@ namespace spotifytoaster
         {
             // Create a simple tray menu with only one item.
             ContextMenu trayMenu = new ContextMenu();
-            trayMenu.MenuItems.Add("Exit", OnExit);
+            trayMenu.MenuItems.Add("Options", onMenu);
+            trayMenu.MenuItems.Add("Exit", onExit);
 
             // Create a tray icon. In this example we use a
             // standard system icon for simplicity, but you
@@ -126,7 +133,7 @@ namespace spotifytoaster
             {
                 timer.Stop();
                 timer.Enabled = false;
-                System.Threading.Thread.Sleep((int)Properties.Settings.Default["ToastTimeToLive"]);
+                System.Threading.Thread.Sleep(myOptions.ToastTimeToLive);
                 overlay.Hide();
                 Hide();
             }
@@ -136,12 +143,26 @@ namespace spotifytoaster
             }
         }
 
-        private void OnExit(object sender, EventArgs e)
+        private void onExit(object sender, EventArgs e)
         {
             //Console.WriteLine("Form Close Detected");
             nct.removeWindowHooks();
             trayIcon.Visible = false;
             Application.Exit();
+        }
+
+        private void onMenu(object sender, EventArgs e)
+        {
+            OptionsForm options = new OptionsForm(myOptions);
+            // Refresh form settings after options closes
+            options.FormClosed += onOptionsClosed;
+            options.Show();
+        }
+
+        private void onOptionsClosed(object sender, EventArgs e)
+        {
+            initializeFromSettings();
+            overlay.initializeFormSettings(myOptions);
         }
 
         public void setArtist(String text)

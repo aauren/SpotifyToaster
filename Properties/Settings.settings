@@ -8,11 +8,14 @@
     <Setting Name="ToastTimeToLive" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5000</Value>
     </Setting>
-    <Setting Name="ToastBackgroundColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">WindowText</Value>
+    <Setting Name="ToastBackgroundColor" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-16777216</Value>
     </Setting>
     <Setting Name="ToastAlphaLevel" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0.9</Value>
+    </Setting>
+    <Setting Name="ToastForegroundColor" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-6632142</Value>
     </Setting>
   </Settings>
 </SettingsFile>

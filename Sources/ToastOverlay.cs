@@ -1,4 +1,5 @@
-﻿using System;
+﻿using spotifytoaster.Sources;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,13 @@ namespace spotifytoaster
         public ToastOverlay()
         {
             InitializeComponent();
+        }
+
+        internal void initializeFormSettings(Options myOptions)
+        {
+            albumBox.ForeColor = myOptions.ToastForegroundColor;
+            artistBox.ForeColor = myOptions.ToastForegroundColor;
+            trackBox.ForeColor = myOptions.ToastForegroundColor;
         }
     }
 }

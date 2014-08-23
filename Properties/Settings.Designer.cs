@@ -49,10 +49,10 @@ namespace spotifytoaster.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("WindowText")]
-        public global::System.Drawing.Color ToastBackgroundColor {
+        [global::System.Configuration.DefaultSettingValueAttribute("-16777216")]
+        public int ToastBackgroundColor {
             get {
-                return ((global::System.Drawing.Color)(this["ToastBackgroundColor"]));
+                return ((int)(this["ToastBackgroundColor"]));
             }
             set {
                 this["ToastBackgroundColor"] = value;
@@ -68,6 +68,18 @@ namespace spotifytoaster.Properties {
             }
             set {
                 this["ToastAlphaLevel"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-6632142")]
+        public int ToastForegroundColor {
+            get {
+                return ((int)(this["ToastForegroundColor"]));
+            }
+            set {
+                this["ToastForegroundColor"] = value;
             }
         }
     }

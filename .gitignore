@@ -5,3 +5,4 @@ obj/
 Properties/ProtectedResources.Designer.cs
 Properties/ProtectedResources.resx
 *.pdb
+bin/Release/SpotifyToaster.exe.config
