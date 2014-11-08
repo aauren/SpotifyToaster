@@ -28,46 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.trackBox = new System.Windows.Forms.Label();
-            this.artistBox = new System.Windows.Forms.Label();
-            this.albumBox = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // trackBox
-            // 
-            this.trackBox.AutoSize = true;
-            this.trackBox.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.trackBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trackBox.ForeColor = System.Drawing.Color.YellowGreen;
-            this.trackBox.Location = new System.Drawing.Point(80, 57);
-            this.trackBox.Name = "trackBox";
-            this.trackBox.Size = new System.Drawing.Size(93, 16);
-            this.trackBox.TabIndex = 8;
-            this.trackBox.Text = "Track Name";
-            // 
-            // artistBox
-            // 
-            this.artistBox.AutoSize = true;
-            this.artistBox.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.artistBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.artistBox.ForeColor = System.Drawing.Color.YellowGreen;
-            this.artistBox.Location = new System.Drawing.Point(80, 34);
-            this.artistBox.Name = "artistBox";
-            this.artistBox.Size = new System.Drawing.Size(43, 16);
-            this.artistBox.TabIndex = 7;
-            this.artistBox.Text = "Artist";
-            // 
-            // albumBox
-            // 
-            this.albumBox.AutoSize = true;
-            this.albumBox.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.albumBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.albumBox.ForeColor = System.Drawing.Color.YellowGreen;
-            this.albumBox.Location = new System.Drawing.Point(80, 10);
-            this.albumBox.Name = "albumBox";
-            this.albumBox.Size = new System.Drawing.Size(51, 16);
-            this.albumBox.TabIndex = 12;
-            this.albumBox.Text = "Album";
             // 
             // ToastOverlay
             // 
@@ -76,9 +37,6 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(363, 84);
             this.ControlBox = false;
-            this.Controls.Add(this.albumBox);
-            this.Controls.Add(this.trackBox);
-            this.Controls.Add(this.artistBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ToastOverlay";
             this.ShowIcon = false;
@@ -87,15 +45,11 @@
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.WhiteSmoke;
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        internal System.Windows.Forms.Label trackBox;
-        internal System.Windows.Forms.Label artistBox;
-        internal System.Windows.Forms.Label albumBox;
 
 
     }

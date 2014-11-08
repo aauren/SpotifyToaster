@@ -126,7 +126,7 @@ namespace spotifytoaster
 
         private void timerTick(object sender, EventArgs e)
         {
-            //Lift window by 5 pixels
+            //Lift window by 2 pixels
             startPosY -= 2;
             //If window is fully visible stop the timer
             if (startPosY < Screen.PrimaryScreen.WorkingArea.Height - Height)
@@ -167,17 +167,17 @@ namespace spotifytoaster
 
         public void setArtist(String text)
         {
-            overlay.artistBox.Text = text;
+            overlay.setArtistText(text);
         }
 
         public void setTrack(String text)
         {
-            overlay.trackBox.Text = text;
+            overlay.setTrackName(text);
         }
 
         public void setAlbum(String text)
         {
-            overlay.albumBox.Text = text;
+            overlay.setAlbumnText(text);
         }
 
         public void setAlbumImageUrl(String url)
