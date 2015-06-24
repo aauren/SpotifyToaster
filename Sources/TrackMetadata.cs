@@ -76,7 +76,7 @@ namespace Metadata
         //Returns track/song name.
         public string getTrack()
         {
-            if (getCurrentTrackInfo() == null || getCurrentTrackInfo().Length == 0)
+            if (getCurrentTrackInfo() == null || getCurrentTrackInfo().Length < 2)
                 return null;
             else
                 return getCurrentTrackInfo()[1].Trim();
