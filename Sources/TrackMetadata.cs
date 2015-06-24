@@ -58,8 +58,14 @@ namespace Metadata
 
             if (!string.IsNullOrEmpty(currentTrack))
             {
-
-                strArray = currentTrack.Split('\u2013');
+                if (currentTrack.IndexOf('-') >= 0)
+                {
+                    strArray = currentTrack.Split('-');
+                }
+                else
+                {
+                    strArray = currentTrack.Split('\u2013');
+                }
             }
             else
                 return null;
